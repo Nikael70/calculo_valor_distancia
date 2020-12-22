@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" type="text/css" href="index.css">
+
+	<label for="inputDistancia"> Distância: </label>
+	<input id="inputDistancia" type="text">
+
+	<label for="inputTempo"> Tempo min: </label>
+	<input id="inputTempo" type="text">
+
+	<button id="botaoCalcular" onclick="calcular()">
+	  Calcular
+	</button>
+
+</head>
+<body>
+	<script>
+		
+		
+function formatamoeda(numero){
+
+  return numero.toFixed(2).replace('.',',')
+}
+
+function calcular(){
+  
+  distanciakm= inputDistancia.value
+  tempomin= inputTempo.value
+  valorcorrida=2 + distanciakm * 1.4 + tempomin  * 0.26
+  botaoCalcular.innerHTML ="Total: R$ " + formatamoeda(valorcorrida)
+}
+	</script>
+</body>
+</html>
